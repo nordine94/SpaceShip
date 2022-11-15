@@ -1,0 +1,258 @@
+@startuml
+
+/' diagram meta data start
+config=StructureConfiguration;
+{
+  "projectClassification": {
+    "searchMode": "OpenProject", // OpenProject, AllProjects
+    "includedProjects": "",
+    "pathEndKeywords": "*.impl",
+    "isClientPath": "",
+    "isClientName": "",
+    "isTestPath": "",
+    "isTestName": "",
+    "isMappingPath": "",
+    "isMappingName": "",
+    "isDataAccessPath": "",
+    "isDataAccessName": "",
+    "isDataStructurePath": "",
+    "isDataStructureName": "",
+    "isInterfaceStructuresPath": "",
+    "isInterfaceStructuresName": "",
+    "isEntryPointPath": "",
+    "isEntryPointName": "",
+    "treatFinalFieldsAsMandatory": false
+  },
+  "graphRestriction": {
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "removeByInheritance": "", // inheritance/annotation based filtering is done in a second step
+    "removeByAnnotation": "",
+    "removeByClassPackage": "", // cleanup the graph after inheritance/annotation based filtering is done
+    "removeByClassName": "",
+    "cutMappings": false,
+    "cutEnum": true,
+    "cutTests": true,
+    "cutClient": true,
+    "cutDataAccess": false,
+    "cutInterfaceStructures": false,
+    "cutDataStructures": false,
+    "cutGetterAndSetter": true,
+    "cutConstructors": true
+  },
+  "graphTraversal": {
+    "forwardDepth": 6,
+    "backwardDepth": 6,
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "hideMappings": false,
+    "hideDataStructures": false,
+    "hidePrivateMethods": true,
+    "hideInterfaceCalls": true, // indirection: implementation -> interface (is hidden) -> implementation
+    "onlyShowApplicationEntryPoints": false, // root node is included
+    "useMethodCallsForStructureDiagram": "ForwardOnly" // ForwardOnly, BothDirections, No
+  },
+  "details": {
+    "aggregation": "GroupByClass", // ByClass, GroupByClass, None
+    "showClassGenericTypes": true,
+    "showMethods": true,
+    "showMethodParameterNames": true,
+    "showMethodParameterTypes": true,
+    "showMethodReturnType": true,
+    "showPackageLevels": 2,
+    "showDetailedClassStructure": true
+  },
+  "rootClass": "Planete",
+  "extensionCallbackMethod": "" // qualified.class.name#methodName - signature: public static String method(String)
+}
+diagram meta data end '/
+
+
+
+digraph g {
+    rankdir="TB"
+    splines=polyline
+    
+
+'nodes 
+subgraph cluster_1170758061 { 
+   	label=Planete
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   Planete1170758061[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Planete</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >#   atmosphere: Atmosphere [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   diametre: int [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   nom: String [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" ># expansion(milliardsDAnneesLumiere: double): String</TD></TR>
+<TR><TD ALIGN="LEFT" ># revolution(degres: int): int</TD></TR>
+<TR><TD ALIGN="LEFT" ># rotation(degres: int): int</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+
+subgraph cluster_1182312952 { 
+   	label=VaisseauCivil
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   VaisseauCivil1182312952[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)VaisseauCivil</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" ># emporterCargaison(tonnage: int): int</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+
+subgraph cluster_1432830789 { 
+   	label=Vaisseau
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   Vaisseau1432830789[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Vaisseau</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >#   blindage: int [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   nbPassagers: int [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   resistanceDuBouclier: int [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   tonnageActuel: int [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   tonnageMax: int [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   type: String [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" ># activerBouclier()</TD></TR>
+<TR><TD ALIGN="LEFT" ># desactiverBouclier()</TD></TR>
+<TR><TD ALIGN="LEFT" ># emporterCargaison(tonnage: int): int</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+
+subgraph cluster_1708238419 { 
+   	label=PlaneteTellurique
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   PlaneteTellurique1708238419[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)PlaneteTellurique</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >#   totalVisiteurs: int [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   vaisseauAccoste: Vaisseau [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ accueillirVaisseau(nouveauVaisseau: Vaisseau): Vaisseau</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+
+subgraph cluster_411538250 { 
+   	label=VaisseauDeGuerre
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   VaisseauDeGuerre411538250[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)VaisseauDeGuerre</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >#   armesDesactivees: boolean [1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" ># activerBouclier()</TD></TR>
+<TR><TD ALIGN="LEFT" ># attaque(vaisseauCible: Vaisseau, arme: String, duree: int)</TD></TR>
+<TR><TD ALIGN="LEFT" ># desactiverArmes()</TD></TR>
+<TR><TD ALIGN="LEFT" ># emporterCargaison(cargaison: int): int</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+
+subgraph cluster_45858955 { 
+   	label=PlaneteGazeuse
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   PlaneteGazeuse45858955[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)PlaneteGazeuse</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+
+subgraph cluster_720648514 { 
+   	label=Atmosphere
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   Atmosphere720648514[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Atmosphere</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >#   tauxArgon: float [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   tauxAzote: float [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   tauxDioxydeDeCarbone: float [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   tauxHelium: float [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   tauxHydrogene: float [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   tauxMethane: float [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   tauxSodium: float [1]</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+
+'edges    
+Planete1170758061 -> Atmosphere720648514[label="atmosphere
+[0..1]"];
+Planete1170758061 -> PlaneteGazeuse45858955[arrowhead=none, arrowtail=empty, dir=both];
+Planete1170758061 -> PlaneteTellurique1708238419[arrowhead=none, arrowtail=empty, dir=both];
+PlaneteTellurique1708238419 -> Vaisseau1432830789[label="vaisseauAccoste
+[0..1]"];
+PlaneteTellurique1708238419 -> VaisseauDeGuerre411538250[label="accueillirVaisseau() -> desactiverArmes()"];
+Vaisseau1432830789 -> VaisseauCivil1182312952[arrowhead=none, arrowtail=empty, dir=both];
+Vaisseau1432830789 -> VaisseauDeGuerre411538250[arrowhead=none, arrowtail=empty, dir=both];
+    
+}
+@enduml
